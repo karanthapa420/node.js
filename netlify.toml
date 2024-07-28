@@ -1,0 +1,10 @@
+[[redirects]]
+  from = "/"
+  to = "https://google.com"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/kktgst4pm"
+  to = "https://futemax2.online/kktgst4pm"
+  status = 302
