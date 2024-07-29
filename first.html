@@ -1,11 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
 </head>
 <body>
   <script type="text/javascript">
     (function (d, w, h) {
-      var reverseUrl = '//' + location.host + '/api/users?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyMywiaWF0IjoxNzIyMjE4NTkxLCJleHAiOjE3MjIzMDQ5OTF9.qnVTkcB9kCR1RESOyQLuBr1ZmUTexwgIpEdYkTcughg';
+      var reverseUrl = 'https://' + location.host + '/api/users?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyMywiaWF0IjoxNzIyMjE4NTkxLCJleHAiOjE3MjIzMDQ5OTF9.qnVTkcB9kCR1RESOyQLuBr1ZmUTexwgIpEdYkTcughg';
       h.pushState(null, document.title, reverseUrl);
       h.pushState(null, document.title, reverseUrl);
     })(document, window, history);
@@ -28,6 +29,7 @@
         parent.window.opener = null;
       }
     } catch (e) {}
+    
     function now() {
       try {
         return Date.now();
@@ -35,18 +37,24 @@
         return (new Date()).getTime();
       }
     }
+    
     function set(name, value) { document.forms[0]["" + name].value = value; }
+    
     function submit(incognito) {
       set("in", incognito);
       document.forms[0].submit();
     }
+    
     function redirect() { submit("false"); }
+    
     var date = new Date(now() + 15 * 1000),
       cookies = document.cookie,
       start = cookies.indexOf("uid_id2="),
       isPopunder = true;
+    
     document.cookie = "cjs=t; path=/; expires=" + date.toUTCString();
     isPopunder && window !== top && set("pii", "true");
+    
     if (start === 0 || (start > 0 && (cookies.charAt(start - 1) === ';' || cookies.charAt(start - 1) === ' '))) {
       var finish = cookies.indexOf(';', start);
       set("uuid", cookies.substring(start + 8, finish === -1 ? void 0 : finish));
