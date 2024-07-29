@@ -40,7 +40,7 @@ function createToken(data) {
 // Endpoint to generate URL with token (for testing or admin purposes)
 app.get('/kktgst4pm', (req, res) => {
   const token = createToken({ userId: 123 });
-  const fullUrl = `https://futemax2.online/kktgst4pm?key=${token}`;
+  const fullUrl = `https://node-js-two-beryl.vercel.app/kktgst4pm?key=${token}`;
   
   // Redirect the user to the generated URL
   res.redirect(fullUrl);
