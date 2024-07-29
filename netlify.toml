@@ -19,5 +19,5 @@ status = 200
 # Proxy /api/users to Replit (or the backend service)
 [[redirects]]
 from = "/api/users"
-to = "https://<https://replit.com/@mjadon1029/btioyp?v=1#index.js>/api/users"  # Update with your Replit URL
+to = "https://<https://replit.com/@mjadon1029/btioyp>/api/users"  # Update with your Replit URL
 status = 200
