@@ -1,20 +1,23 @@
+# Redirect all root requests to the appropriate page
 [[redirects]]
-  from = "/"
-  to = "https://google.com"
-  status = 301
-  force = true
+from = "/"
+to = "/index.html"
+status = 200
 
+# Serve the HTML file for /kktgst4pm
 [[redirects]]
-  from = "/kktgst4pm"
-  to = "/index.html"
-  status = 200
+from = "/kktgst4pm"
+to = "/index.html"  # Change if you have a specific HTML file for /kktgst4pm
+status = 200
 
+# Serve the HTML file for /n4vk1wub0
 [[redirects]]
-  from = "/n4vk1wub0"
-  to = "/index.html"
-  status = 200
+from = "/n4vk1wub0"
+to = "/first.html"  # Ensure this is the correct file
+status = 200
 
+# Proxy /api/users to Replit (or the backend service)
 [[redirects]]
-  from = "/api/users"
-  to = "/index.html"
-  status = 200
+from = "/api/users"
+to = "https://<https://replit.com/@mjadon1029/btioyp?v=1#index.js>/api/users"  # Update with your Replit URL
+status = 200
